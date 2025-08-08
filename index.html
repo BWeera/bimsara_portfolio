@@ -388,50 +388,96 @@ section {
     </section>
 
     <!-- Education -->
-<section id="education" class="min-h-screen relative flex items-center justify-center bg-[#141b24] p-12 rounded-lg shadow-md overflow-hidden">
-  <!-- Background Image with Overlay -->
-  <div class="absolute inset-0 pointer-events-none -z-10">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920&auto=format&fit=crop" 
-         alt="Education Tech Background" 
-         class="w-full h-full object-cover opacity-20">
-    <div class="absolute inset-0 bg-[#141b24]/90"></div>
-  </div>
-
-  <div
-    class="max-w-4xl bg-[#1c2128] rounded-lg p-8 shadow-lg text-white mx-auto transition-transform duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2"
-  >
-    <h2 class="text-4xl font-semibold mb-8 text-center">Education</h2>
-
-    <div class="space-y-8 text-lg leading-relaxed">
-      <div>
-        <h3 class="text-2xl font-bold mb-2">Sri Lanka Institute of Information Technology (SLIIT)</h3>
-        <p>BSc (Hons) in Information Technology - Software Engineering</p>
-        <p class="mt-1 text-gray-300">Examinations completed - June 2025 | Official graduation pending</p>
+    <section id="education" class="min-h-screen relative flex items-center justify-center bg-[#141b24] p-12 rounded-lg shadow-md overflow-hidden">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 pointer-events-none -z-10">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920&auto=format&fit=crop" 
+            alt="Education Tech Background" 
+            class="w-full h-full object-cover opacity-20">
+        <div class="absolute inset-0 bg-[#141b24]/90"></div>
       </div>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-2">Advanced Level - 2020</h3>
-        <p>Govt. Science College - Matale | Bio Science Stream</p>
-        <p class="mt-1 text-gray-300">Successfully passed all the subjects</p>
-      </div>
+      <div
+        class="max-w-4xl bg-[#1c2128] rounded-lg p-8 shadow-lg text-white mx-auto transition-transform duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2"
+      >
+        <h2 class="text-4xl font-semibold mb-8 text-center">Education</h2>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-2">Ordinary Level - 2016</h3>
-        <p>Passed all 9 subjects with Distinction passes for all subjects (Sinhala Medium)</p>
+        <div class="space-y-8 text-lg leading-relaxed">
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Sri Lanka Institute of Information Technology (SLIIT)</h3>
+            <p>BSc (Hons) in Information Technology - Software Engineering</p>
+            <p class="mt-1 text-gray-300">Examinations completed - June 2025 | Official graduation pending</p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Advanced Level - 2020</h3>
+            <p>Govt. Science College - Matale | Bio Science Stream</p>
+            <p class="mt-1 text-gray-300">Successfully passed all the subjects</p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Ordinary Level - 2016</h3>
+            <p>Passed all 9 subjects with Distinction passes for all subjects (Sinhala Medium)</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- Contact -->
-    <section id="contact" class="h-screen flex items-center justify-center bg-[#1e2a38]">
-      <div class="max-w-4xl p-6">
-        <h2 class="text-4xl font-semibold mb-4">Contact</h2>
-        <p class="text-lg">Email: <a href="mailto:bimsaraweerakoon@gmail.com" class="text-blue-500 hover:underline">bimsaraweerakoon@gmail.com</a></p>
-        <p class="text-lg">Phone: +94 776859787</p>
-        <p class="text-lg">GitHub: <a href="https://github.com/" class="text-blue-500 hover:underline">github.com/yourusername</a></p>
-        <p class="text-lg">YouTube: <a href="#" class="text-blue-500 hover:underline">Your Tech Channel</a></p>
+    <section id="contact" class="min-h-screen flex items-center justify-center bg-[#1e2a38] p-6">
+      <div class="max-w-4xl w-full bg-[#1c2736] rounded-lg p-8 shadow-lg text-white">
+        <h2 class="text-4xl font-semibold mb-6 text-center">Contact</h2>
+        <form id="contactForm" class="space-y-6 max-w-lg mx-auto" onsubmit="handleSubmit(event)">
+          <div>
+            <label for="name" class="block mb-2 font-medium">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full rounded-md bg-[#2a3a4b] border border-gray-600 p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Your Name"
+            />
+          </div>
+          <div>
+            <label for="email" class="block mb-2 font-medium">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full rounded-md bg-[#2a3a4b] border border-gray-600 p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label for="message" class="block mb-2 font-medium">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full rounded-md bg-[#2a3a4b] border border-gray-600 p-3 text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Write your message here..."
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button
+              type="submit"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md transition"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <div class="mt-10 max-w-lg mx-auto text-center text-gray-300">
+          <p>Email: <a href="mailto:bimsaraweerakoon@gmail.com" class="text-blue-500 hover:underline">bimsaraweerakoon@gmail.com</a></p>
+          <p>Phone: +94 776859787</p>
+          <p>GitHub: <a href="https://github.com/yourusername" class="text-blue-500 hover:underline" target="_blank" rel="noopener">github.com/yourusername</a></p>
+          <p>YouTube: <a href="#" class="text-blue-500 hover:underline" target="_blank" rel="noopener">Your Tech Channel</a></p>
+        </div>
       </div>
     </section>
 
