@@ -136,13 +136,16 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Project Cards -->
-        <!-- Project 1 -->
+       <!-- Project 1 -->
         <div 
           class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
           onclick="openProjectModal(1)">
+          
+          <!-- Image on top, full width, no cropping -->
+          <img src="assets/P1_img4.png" alt="Project 1" class="w-full object-contain rounded-t-lg" />
+          
           <div class="p-4">
             <h3 class="text-xl font-bold mb-2">Project Management System (MERN)</h3>
-            <img src="assets/P1_img4.png" alt="Project 1" class="rounded-md mb-4 object-cover h-48 w-full">
             <a href="https://github.com/yourusername/project1" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
