@@ -8,80 +8,76 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html {
-      scroll-behavior: smooth;
-    }
-    section {
-      transition: background-color 1s ease;
-    }
-    /* Modal fade-in animation */
-    .modal-bg {
-      background-color: rgba(0,0,0,0.7);
-    }
-    .modal-content {
-      animation: fadeInScale 0.3s ease forwards;
-    }
-    @keyframes fadeInScale {
-      0% {opacity: 0; transform: scale(0.9);}
-      100% {opacity: 1; transform: scale(1);}
-    }
-    /* Modal background with frosted glass */
-    .modal-bg {
-      background-color: rgba(13, 17, 23, 0.6); /* semi-transparent dark */
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  scroll-behavior: smooth;
+}
+section {
+  transition: background-color 1s ease;
+}
 
-    /* Modal content with frosted glass look */
-    .modal-content {
-      background: rgba(255, 255, 255, 0.12); /* translucent white */
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      border-radius: 12px;
-      padding: 1.5rem;
-      max-width: 768px;
-      width: 90%;
-      color: #e0e0e0;
-      animation: fadeInScale 0.3s ease forwards;
-    }
+/* Modal background with frosted glass */
+.modal-bg {
+  background-color: rgba(13, 17, 23, 0.6); /* semi-transparent dark */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    /* Fade in scale animation */
-    @keyframes fadeInScale {
-      0% {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+/* Modal content styling */
+.modal-content {
+  background: rgba(255, 255, 255, 0.12); /* translucent white */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 80vw;      /* wider */
+  max-height: 90vh;     /* taller */
+  overflow-y: auto;     /* scroll if needed */
+  color: #e0e0e0;
+  animation: fadeInScale 0.3s ease forwards;
+}
 
-    /* Optional: hide scrollbar */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+/* Modal fade-in scale animation */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
+}
 
-  /* Enlarge modal max width and max height */
-  .modal-content {
-    max-width: 80vw;      /* wider */
-    max-height: 90vh;     /* taller */
-    overflow-y: auto;     /* scroll if needed */
-  }
+/* Hide scrollbars nicely */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
-  /* Larger images inside the gallery */
-  .gallery-image {
-    max-width: 90%;       /* wider images */
-    height: auto;
-    max-height: 400px;    /* control max height */
-    display: block;
-  }
+/* Gallery container styles */
+.gallery-container {
+  scroll-behavior: smooth;
+  perspective: 1000px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+/* Larger images inside the gallery */
+.gallery-image {
+  max-width: 90%;
+  height: auto;
+  max-height: 400px;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
   </style>
 </head>
 <body class="bg-[#0d1117] text-gray-200 font-sans">
@@ -316,17 +312,28 @@
 
   <!-- Modal 2 -->
   <div id="project-modal-2" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
-    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
-      <button onclick="closeProjectModal(2)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-4xl w-full relative">
+      <button 
+        onclick="closeProjectModal(2)" 
+        class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400"
+        aria-label="Close modal">&times;</button>
       <h3 class="text-3xl font-bold mb-4">EasyReach App (Kotlin)</h3>
       <p class="mb-4 text-gray-300">
         An Android application designed for visually impaired users, offering voice navigation and accessibility tools.
       </p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <img src="assets/project2-1.jpg" alt="Screenshot 1" class="rounded-md">
-        <img src="assets/project2-2.jpg" alt="Screenshot 2" class="rounded-md">
+
+      <!-- Hint -->
+      <p class="text-sm text-gray-400 italic mb-2 select-none animate-pulse">
+        Double-click or double-tap images to view fullscreen
+      </p>
+
+      <!-- Scrollable vertical gallery container -->
+      <div id="gallery-2" class="gallery-container mb-4 max-h-[400px] overflow-y-scroll no-scrollbar space-y-6">
+        <img src="assets/P2_img3.png" alt="Screenshot 1" class="gallery-image rounded-md mx-auto" />
+        <img src="assets/p2_img2.png" alt="Screenshot 2" class="gallery-image rounded-md mx-auto" />
       </div>
-      <a href="https://github.com/yourusername/project2" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+
+      <a href="https://github.com/it21250156/EasyReach.git" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
     </div>
   </div>
 
@@ -396,106 +403,129 @@
 
   <!-- Script for navbar scroll effect and modal control -->
   <script>
-    window.addEventListener("scroll", function () {
-      const navbar = document.getElementById("navbar");
-      if (window.scrollY > 20) {
-        navbar.classList.add(
-          "backdrop-blur-md",
-          "bg-[#0d1117]/10",
-          "border-b",
-          "border-white/10"
-        );
-      } else {
-        navbar.classList.remove(
-          "backdrop-blur-md",
-          "bg-[#0d1117]/10",
-          "border-b",
-          "border-white/10"
-        );
-      }
-    });
-
-    // Open modal
-    function openProjectModal(id) {
-      document.getElementById(`project-modal-${id}`).classList.remove("hidden");
-      document.body.style.overflow = "hidden"; // prevent background scroll
+  // Navbar scroll effect
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 20) {
+      navbar.classList.add(
+        "backdrop-blur-md",
+        "bg-[#0d1117]/10",
+        "border-b",
+        "border-white/10"
+      );
+    } else {
+      navbar.classList.remove(
+        "backdrop-blur-md",
+        "bg-[#0d1117]/10",
+        "border-b",
+        "border-white/10"
+      );
     }
+  });
 
-    // Close modal
-    function closeProjectModal(id) {
-      document.getElementById(`project-modal-${id}`).classList.add("hidden");
-      document.body.style.overflow = ""; // restore scroll
-    }
+  // Open modal by id
+  function openProjectModal(id) {
+    const modal = document.getElementById(`project-modal-${id}`);
+    if (!modal) return;
 
-    // Close modal if clicked outside content
-    window.addEventListener("click", function(event) {
-      for(let i=1; i<=6; i++) {
-        const modal = document.getElementById(`project-modal-${i}`);
-        if (!modal.classList.contains("hidden") && event.target === modal) {
-          closeProjectModal(i);
-        }
-      }
-    });
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden"; // lock background scroll
 
-    const gallery1 = document.getElementById("gallery-1");
-    const images1 = gallery1.querySelectorAll(".gallery-image");
+    // Setup gallery scaling if gallery exists
+    setupWheelGallery(`gallery-${id}`);
 
-    function updateGalleryScale() {
-      const containerRect = gallery1.getBoundingClientRect();
-      const containerCenterY = containerRect.top + containerRect.height / 2;
-
-      images1.forEach(img => {
-        const imgRect = img.getBoundingClientRect();
-        const imgCenterY = imgRect.top + imgRect.height / 2;
-
-        const distance = Math.abs(containerCenterY - imgCenterY);
-        const maxDistance = containerRect.height / 2;
-
-        // Calculate scale between 0.7 and 1 based on distance from center
-        let scale = 1 - (distance / maxDistance) * 0.3;
-        scale = Math.max(scale, 0.7);
-
-        // Optional: adjust brightness or opacity too
-        const brightness = 0.6 + (scale - 0.7) * 2;
-
-        img.style.transform = `scale(${scale})`;
-        img.style.filter = `brightness(${brightness})`;
-
-        if (scale > 0.95) {
-          img.classList.add("focused");
-        } else {
-          img.classList.remove("focused");
-        }
-      });
-    }
-
-    gallery1.addEventListener("scroll", () => {
-      updateGalleryScale();
-    });
-
-    // Initial call on modal open: call updateGalleryScale with a slight delay so layout is settled
-    function openProjectModal(id) {
-      document.getElementById(`project-modal-${id}`).classList.remove("hidden");
-      document.body.style.overflow = "hidden"; // prevent background scroll
-
+    // Reset gallery scroll to top after a slight delay to allow rendering
+    const gallery = modal.querySelector(".gallery-container");
+    if (gallery) {
       setTimeout(() => {
-        updateGalleryScale();
-        // Scroll to top initially
-        gallery1.scrollTop = 0;
+        gallery.scrollTop = 0;
+        // Trigger scale update once shown
+        updateGalleryScale(gallery);
       }, 100);
     }
+  }
 
-    function closeProjectModal(id) {
-      document.getElementById(`project-modal-${id}`).classList.add("hidden");
-      document.body.style.overflow = ""; // restore scroll
+  // Close modal by id
+  function closeProjectModal(id) {
+    const modal = document.getElementById(`project-modal-${id}`);
+    if (!modal) return;
+
+    modal.classList.add("hidden");
+    document.body.style.overflow = ""; // restore scroll
+  }
+
+  // Close modal on clicking outside modal content
+  window.addEventListener("click", function(event) {
+    for(let i = 1; i <= 6; i++) {
+      const modal = document.getElementById(`project-modal-${i}`);
+      if (modal && !modal.classList.contains("hidden") && event.target === modal) {
+        closeProjectModal(i);
+      }
     }
-    // Add double-click/double-tap fullscreen on all gallery images
+  });
+
+  // Universal function to update scales for any gallery container element
+  function updateGalleryScale(container) {
+    const containerRect = container.getBoundingClientRect();
+    const containerCenterY = containerRect.top + containerRect.height / 2;
+
+    Array.from(container.children).forEach(img => {
+      const imgRect = img.getBoundingClientRect();
+      const imgCenterY = imgRect.top + imgRect.height / 2;
+
+      // Distance from container center (in px)
+      const distance = Math.abs(containerCenterY - imgCenterY);
+
+      // Normalize and clamp scale
+      const maxDistance = containerRect.height / 2;
+      let scale = 1 - (distance / maxDistance) * 0.5;
+      scale = Math.min(Math.max(scale, 0.5), 1);
+
+      img.style.transform = `scale(${scale})`;
+    });
+  }
+
+  // Setup wheel gallery scroll animation by gallery container ID
+  function setupWheelGallery(galleryId) {
+    const container = document.getElementById(galleryId);
+    if (!container) return;
+
+    // First call to update scales
+    updateGalleryScale(container);
+
+    // Throttle scroll event with requestAnimationFrame for performance
+    let ticking = false;
+    container.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateGalleryScale(container);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Also update on window resize
+    window.addEventListener('resize', () => updateGalleryScale(container));
+  }
+
+  // Fullscreen open function
+  function openFullscreen(element) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.webkitRequestFullscreen) { /* Safari */
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { /* IE11 */
+      element.msRequestFullscreen();
+    }
+  }
+
+  // Add double-click/double-tap fullscreen on all gallery images dynamically
+  function addFullscreenListeners() {
     document.querySelectorAll('.gallery-image').forEach(img => {
-      img.addEventListener('dblclick', () => {
-        openFullscreen(img);
-      });
-      
-      // For mobile double tap detection (optional)
+      img.addEventListener('dblclick', () => openFullscreen(img));
+
+      // Mobile double-tap detection
       let lastTap = 0;
       img.addEventListener('touchend', (e) => {
         const currentTime = new Date().getTime();
@@ -507,17 +537,12 @@
         lastTap = currentTime;
       });
     });
+  }
 
-    function openFullscreen(element) {
-      if (element.requestFullscreen) {
-        element.requestFullscreen();
-      } else if (element.webkitRequestFullscreen) { /* Safari */
-        element.webkitRequestFullscreen();
-      } else if (element.msRequestFullscreen) { /* IE11 */
-        element.msRequestFullscreen();
-      }
-    }
-  </script>
+  // Initialize fullscreen listeners on DOM ready
+  document.addEventListener("DOMContentLoaded", addFullscreenListeners);
+</script>
+
 
 </body>
 </html>
