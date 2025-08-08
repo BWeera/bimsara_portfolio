@@ -142,6 +142,35 @@
     .animate-slowFloat {
       animation: slowFloat 10s ease-in-out infinite;
     }
+    @keyframes gradientEducation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradientEducation {
+    background-size: 300% 300%;
+    animation: gradientEducation 20s ease infinite;
+  }
+
+  @keyframes slowFloat {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+
+  .animate-slowFloat {
+    animation: slowFloat 12s ease-in-out infinite;
+  }
   </style>
 </head>
 <body class="bg-[#0d1117] text-gray-200 font-sans">
@@ -368,163 +397,162 @@
     </section>
   
     <!-- Skills -->
-<section id="skills" class="min-h-screen relative flex items-center justify-center bg-[#19222c] py-10 overflow-hidden">
+    <section id="skills" class="min-h-screen relative flex items-center justify-center bg-[#19222c] py-10 overflow-hidden">
+      <!-- Animated Gradient Background -->
+      <div class="absolute inset-0 z-0 bg-gradient-to-r from-green-800 via-teal-700 to-cyan-900 opacity-30 animate-gradientSkills pointer-events-none"></div>
+
+      <!-- Floating Dots Pattern -->
+      <div class="absolute w-full h-full bg-[radial-gradient(circle_at_1px_1px,#ffffff22_1px,transparent_0)] bg-[size:35px_35px] animate-slowFloat opacity-15 pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-6xl px-6">
+        <h2 class="text-4xl font-semibold text-center text-white mb-10">Skills</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Frontend Card -->
+          <div class="bg-[#161b22] p-6 rounded-lg shadow-lg flex flex-col items-center transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(30,211,178,0.7)]">
+            <h3 class="text-2xl font-bold text-white mb-4">Frontend</h3>
+            <div class="flex flex-wrap gap-3 justify-center">
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-6 h-6 mr-2"/> React.js
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-6 h-6 mr-2"/> HTML
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-6 h-6 mr-2"/> CSS
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-6 h-6 mr-2"/> JavaScript
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="w-6 h-6 mr-2"/> Bootstrap
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://mui.com/static/logo.png" class="w-6 h-6 mr-2"/> Material UI
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="w-6 h-6 mr-2"/> Flutter
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Card -->
+          <div class="bg-[#161b22] p-6 rounded-lg shadow-lg flex flex-col items-center transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(30,211,178,0.7)]">
+            <h3 class="text-2xl font-bold text-white mb-4">Backend</h3>
+            <div class="flex flex-wrap gap-3 justify-center">
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-6 h-6 mr-2"/> Node.js
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-6 h-6 mr-2"/> Python
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-6 h-6 mr-2"/> MySQL
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-6 h-6 mr-2"/> MongoDB
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" class="w-6 h-6 mr-2"/> Firebase
+              </div>
+            </div>
+          </div>
+
+          <!-- Android Card -->
+          <div class="bg-[#161b22] p-6 rounded-lg shadow-lg flex flex-col items-center transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(30,211,178,0.7)]">
+            <h3 class="text-2xl font-bold text-white mb-4">Android</h3>
+            <div class="flex flex-wrap gap-3 justify-center">
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-6 h-6 mr-2"/> Java
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="w-6 h-6 mr-2"/> Kotlin
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" class="w-6 h-6 mr-2"/> Android Studio
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="w-6 h-6 mr-2"/> Flutter
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://www.gstatic.com/devrel-devsite/prod/vb6c2dfd1d6a3129b0a8a809d17f146d116e7a857e7ffb913a0a420bfc14d5b57/tensorflow/images/lockup.svg" class="w-6 h-6 mr-2"/> TFLite
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://developers.google.com/ml-kit/images/logo.svg" class="w-6 h-6 mr-2"/> ML Kit
+              </div>
+            </div>
+          </div>
+
+          <!-- Others Card -->
+          <div class="bg-[#161b22] p-6 rounded-lg shadow-lg flex flex-col items-center transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(30,211,178,0.7)]">
+            <h3 class="text-2xl font-bold text-white mb-4">Others</h3>
+            <div class="flex flex-wrap gap-3 justify-center">
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-6 h-6 mr-2"/> GitHub
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-6 h-6 mr-2"/> Docker
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="w-6 h-6 mr-2"/> VS Code
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="w-6 h-6 mr-2"/> Figma
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" class="w-6 h-6 mr-2"/> Photoshop
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" class="w-6 h-6 mr-2"/> Premiere Pro
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://colab.research.google.com/img/colab_favicon_256px.png" class="w-6 h-6 mr-2"/> Google Colab
+              </div>
+              <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" class="w-6 h-6 mr-2"/> Jupyter Notebook
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+<section id="education" class="min-h-screen relative flex items-center justify-center bg-[#141b24] p-12 rounded-lg shadow-md overflow-hidden">
+
   <!-- Animated Gradient Background -->
-  <div class="absolute inset-0 z-0 bg-gradient-to-r from-green-800 via-teal-700 to-cyan-900 opacity-30 animate-gradientSkills pointer-events-none"></div>
+  <div class="absolute inset-0 z-0 bg-gradient-to-r from-purple-900 via-pink-800 to-red-900 opacity-30 animate-gradientEducation pointer-events-none"></div>
 
   <!-- Floating Dots Pattern -->
   <div class="absolute w-full h-full bg-[radial-gradient(circle_at_1px_1px,#ffffff22_1px,transparent_0)] bg-[size:35px_35px] animate-slowFloat opacity-15 pointer-events-none"></div>
 
-  <div class="relative z-10 max-w-6xl px-6">
-    <h2 class="text-4xl font-semibold text-center text-white mb-10">Skills</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-      <!-- Frontend Card -->
-      <div class="bg-[#161b22] p-6 rounded-lg shadow-lg flex flex-col items-center transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(30,211,178,0.7)]">
-        <h3 class="text-2xl font-bold text-white mb-4">Frontend</h3>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-6 h-6 mr-2"/> React.js
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-6 h-6 mr-2"/> HTML
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-6 h-6 mr-2"/> CSS
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-6 h-6 mr-2"/> JavaScript
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="w-6 h-6 mr-2"/> Bootstrap
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://mui.com/static/logo.png" class="w-6 h-6 mr-2"/> Material UI
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="w-6 h-6 mr-2"/> Flutter
-          </div>
-        </div>
+  <div
+    class="relative z-10 max-w-4xl bg-[#1c2128] rounded-xl p-10 shadow-lg text-white mx-auto transition-transform duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-3"
+  >
+    <h2 class="text-4xl font-semibold mb-10 text-center">Education</h2>
+
+    <div class="space-y-10 text-lg leading-relaxed">
+      <div>
+        <h3 class="text-2xl font-bold mb-3">Sri Lanka Institute of Information Technology (SLIIT)</h3>
+        <p>BSc (Hons) in Information Technology - Software Engineering</p>
+        <p class="mt-2 text-gray-300 italic">Examinations completed - June 2025 | Official graduation pending</p>
       </div>
 
-      <!-- Backend Card -->
-      <div class="bg-[#161b22] p-6 rounded-lg shadow-lg flex flex-col items-center transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(30,211,178,0.7)]">
-        <h3 class="text-2xl font-bold text-white mb-4">Backend</h3>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-6 h-6 mr-2"/> Node.js
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-6 h-6 mr-2"/> Python
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-6 h-6 mr-2"/> MySQL
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-6 h-6 mr-2"/> MongoDB
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" class="w-6 h-6 mr-2"/> Firebase
-          </div>
-        </div>
+      <div>
+        <h3 class="text-2xl font-bold mb-3">Advanced Level - 2020</h3>
+        <p>Govt. Science College - Matale | Bio Science Stream</p>
+        <p class="mt-2 text-gray-300 italic">Successfully passed all the subjects</p>
       </div>
 
-      <!-- Android Card -->
-      <div class="bg-[#161b22] p-6 rounded-lg shadow-lg flex flex-col items-center transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(30,211,178,0.7)]">
-        <h3 class="text-2xl font-bold text-white mb-4">Android</h3>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-6 h-6 mr-2"/> Java
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="w-6 h-6 mr-2"/> Kotlin
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" class="w-6 h-6 mr-2"/> Android Studio
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="w-6 h-6 mr-2"/> Flutter
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://www.gstatic.com/devrel-devsite/prod/vb6c2dfd1d6a3129b0a8a809d17f146d116e7a857e7ffb913a0a420bfc14d5b57/tensorflow/images/lockup.svg" class="w-6 h-6 mr-2"/> TFLite
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://developers.google.com/ml-kit/images/logo.svg" class="w-6 h-6 mr-2"/> ML Kit
-          </div>
-        </div>
+      <div>
+        <h3 class="text-2xl font-bold mb-3">Ordinary Level - 2016</h3>
+        <p>Passed all 9 subjects with Distinction passes for all subjects (Sinhala Medium)</p>
       </div>
-
-      <!-- Others Card -->
-      <div class="bg-[#161b22] p-6 rounded-lg shadow-lg flex flex-col items-center transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(30,211,178,0.7)]">
-        <h3 class="text-2xl font-bold text-white mb-4">Others</h3>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-6 h-6 mr-2"/> GitHub
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-6 h-6 mr-2"/> Docker
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="w-6 h-6 mr-2"/> VS Code
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="w-6 h-6 mr-2"/> Figma
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" class="w-6 h-6 mr-2"/> Photoshop
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" class="w-6 h-6 mr-2"/> Premiere Pro
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://colab.research.google.com/img/colab_favicon_256px.png" class="w-6 h-6 mr-2"/> Google Colab
-          </div>
-          <div class="skill-box flex items-center border border-gray-500 px-3 py-1 rounded-lg cursor-pointer transition transform duration-200 hover:bg-teal-600 hover:scale-105 hover:shadow-lg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" class="w-6 h-6 mr-2"/> Jupyter Notebook
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
-
-    <!-- Education -->
-    <section id="education" class="min-h-screen relative flex items-center justify-center bg-[#141b24] p-12 rounded-lg shadow-md overflow-hidden">
-      <!-- Background Image with Overlay -->
-      <div class="absolute inset-0 pointer-events-none -z-10">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920&auto=format&fit=crop" 
-            alt="Education Tech Background" 
-            class="w-full h-full object-cover opacity-20">
-        <div class="absolute inset-0 bg-[#141b24]/90"></div>
-      </div>
-
-      <div
-        class="max-w-4xl bg-[#1c2128] rounded-lg p-8 shadow-lg text-white mx-auto transition-transform duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2"
-      >
-        <h2 class="text-4xl font-semibold mb-8 text-center">Education</h2>
-
-        <div class="space-y-8 text-lg leading-relaxed">
-          <div>
-            <h3 class="text-2xl font-bold mb-2">Sri Lanka Institute of Information Technology (SLIIT)</h3>
-            <p>BSc (Hons) in Information Technology - Software Engineering</p>
-            <p class="mt-1 text-gray-300">Examinations completed - June 2025 | Official graduation pending</p>
-          </div>
-
-          <div>
-            <h3 class="text-2xl font-bold mb-2">Advanced Level - 2020</h3>
-            <p>Govt. Science College - Matale | Bio Science Stream</p>
-            <p class="mt-1 text-gray-300">Successfully passed all the subjects</p>
-          </div>
-
-          <div>
-            <h3 class="text-2xl font-bold mb-2">Ordinary Level - 2016</h3>
-            <p>Passed all 9 subjects with Distinction passes for all subjects (Sinhala Medium)</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
     <!-- Contact -->
