@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bimsara Weerakoon | Portfolio</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -12,6 +12,51 @@
     }
     section {
       transition: background-color 1s ease;
+    }
+    /* Modal fade-in animation */
+    .modal-bg {
+      background-color: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      animation: fadeInScale 0.3s ease forwards;
+    }
+    @keyframes fadeInScale {
+      0% {opacity: 0; transform: scale(0.9);}
+      100% {opacity: 1; transform: scale(1);}
+    }
+    /* Modal background with frosted glass */
+    .modal-bg {
+      background-color: rgba(13, 17, 23, 0.6); /* semi-transparent dark */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Modal content with frosted glass look */
+    .modal-content {
+      background: rgba(255, 255, 255, 0.12); /* translucent white */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 768px;
+      width: 90%;
+      color: #e0e0e0;
+      animation: fadeInScale 0.3s ease forwards;
+    }
+
+    /* Fade in scale animation */
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
@@ -60,15 +105,95 @@
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="h-screen flex items-center justify-center bg-[#10151d] transition-colors duration-1000">
-      <div class="max-w-4xl p-6">
-        <h2 class="text-4xl font-semibold mb-4">Projects</h2>
-        <ul class="list-disc pl-5 space-y-2 text-lg">
-          <li><strong>Project Management System (MERN)</strong>: Gamified contribution tracking, IEEE paper published.</li>
-          <li><strong>EasyReach App (Kotlin)</strong>: Android app for visually impaired users.</li>
-          <li><strong>Gems & Jewelry Web App (MERN)</strong>: Request tracking system with admin reports.</li>
-        </ul>
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen flex flex-col justify-center bg-[#161b22] p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-6">Projects</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Project Cards -->
+        <!-- Project 1 -->
+        <div 
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          onclick="openProjectModal(1)">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Project Management System (MERN)</h3>
+            <img src="assets/project1-thumb.jpg" alt="Project 1" class="rounded-md mb-4 object-cover h-48 w-full">
+            <a href="https://github.com/yourusername/project1" target="_blank"
+              class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div 
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          onclick="openProjectModal(2)">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">EasyReach App (Kotlin)</h3>
+            <img src="assets/project2-thumb.jpg" alt="Project 2" class="rounded-md mb-4 object-cover h-48 w-full">
+            <a href="https://github.com/yourusername/project2" target="_blank"
+              class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div 
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          onclick="openProjectModal(3)">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Gems & Jewelry Web App (MERN)</h3>
+            <img src="assets/project3-thumb.jpg" alt="Project 3" class="rounded-md mb-4 object-cover h-48 w-full">
+            <a href="https://github.com/yourusername/project3" target="_blank"
+              class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div 
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          onclick="openProjectModal(4)">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">ML Research App</h3>
+            <img src="assets/project4-thumb.jpg" alt="Project 4" class="rounded-md mb-4 object-cover h-48 w-full">
+            <a href="https://github.com/yourusername/project4" target="_blank"
+              class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div 
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          onclick="openProjectModal(5)">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Accessibility Tools Suite</h3>
+            <img src="assets/project5-thumb.jpg" alt="Project 5" class="rounded-md mb-4 object-cover h-48 w-full">
+            <a href="https://github.com/yourusername/project5" target="_blank"
+              class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div 
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          onclick="openProjectModal(6)">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Data Visualization Dashboard</h3>
+            <img src="assets/project6-thumb.jpg" alt="Project 6" class="rounded-md mb-4 object-cover h-48 w-full">
+            <a href="https://github.com/yourusername/project6" target="_blank"
+              class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
+              View on GitHub
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -119,7 +244,110 @@
     <p>&copy; 2025 Bimsara Weerakoon</p>
   </footer>
 
-  <!-- Script for navbar scroll effect -->
+  <!-- Project Modals -->
+
+  <!-- Modal Template: copy and update for each project -->
+
+  <!-- Modal 1 -->
+  <div id="project-modal-1" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+      <button 
+        onclick="closeProjectModal(1)" 
+        class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400"
+        aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-bold mb-4">Project Management System (MERN)</h3>
+      <p class="mb-4 text-gray-300">
+        A full-featured project management system with gamified contribution tracking and IEEE paper publication.
+      </p>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <img src="assets/project1-1.jpg" alt="Screenshot 1" class="rounded-md">
+        <img src="assets/project1-2.jpg" alt="Screenshot 2" class="rounded-md">
+      </div>
+      <a href="https://github.com/yourusername/project1" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="project-modal-2" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+      <button onclick="closeProjectModal(2)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-bold mb-4">EasyReach App (Kotlin)</h3>
+      <p class="mb-4 text-gray-300">
+        An Android application designed for visually impaired users, offering voice navigation and accessibility tools.
+      </p>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <img src="assets/project2-1.jpg" alt="Screenshot 1" class="rounded-md">
+        <img src="assets/project2-2.jpg" alt="Screenshot 2" class="rounded-md">
+      </div>
+      <a href="https://github.com/yourusername/project2" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div id="project-modal-3" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+      <button onclick="closeProjectModal(3)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-bold mb-4">Gems & Jewelry Web App (MERN)</h3>
+      <p class="mb-4 text-gray-300">
+        Request tracking system with admin reports and user management.
+      </p>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <img src="assets/project3-1.jpg" alt="Screenshot 1" class="rounded-md">
+        <img src="assets/project3-2.jpg" alt="Screenshot 2" class="rounded-md">
+      </div>
+      <a href="https://github.com/yourusername/project3" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="project-modal-4" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+      <button onclick="closeProjectModal(4)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-bold mb-4">ML Research App</h3>
+      <p class="mb-4 text-gray-300">
+        Machine learning research project focusing on image classification and model optimization.
+      </p>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <img src="assets/project4-1.jpg" alt="Screenshot 1" class="rounded-md">
+        <img src="assets/project4-2.jpg" alt="Screenshot 2" class="rounded-md">
+      </div>
+      <a href="https://github.com/yourusername/project4" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="project-modal-5" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+      <button onclick="closeProjectModal(5)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-bold mb-4">Accessibility Tools Suite</h3>
+      <p class="mb-4 text-gray-300">
+        Suite of accessibility tools enhancing usability for differently-abled users.
+      </p>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <img src="assets/project5-1.jpg" alt="Screenshot 1" class="rounded-md">
+        <img src="assets/project5-2.jpg" alt="Screenshot 2" class="rounded-md">
+      </div>
+      <a href="https://github.com/yourusername/project5" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="project-modal-6" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+      <button onclick="closeProjectModal(6)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-bold mb-4">Data Visualization Dashboard</h3>
+      <p class="mb-4 text-gray-300">
+        Interactive dashboard displaying key metrics and analytics with modern charts.
+      </p>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <img src="assets/project6-1.jpg" alt="Screenshot 1" class="rounded-md">
+        <img src="assets/project6-2.jpg" alt="Screenshot 2" class="rounded-md">
+      </div>
+      <a href="https://github.com/yourusername/project6" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Script for navbar scroll effect and modal control -->
   <script>
     window.addEventListener("scroll", function () {
       const navbar = document.getElementById("navbar");
@@ -137,6 +365,28 @@
           "border-b",
           "border-white/10"
         );
+      }
+    });
+
+    // Open modal
+    function openProjectModal(id) {
+      document.getElementById(`project-modal-${id}`).classList.remove("hidden");
+      document.body.style.overflow = "hidden"; // prevent background scroll
+    }
+
+    // Close modal
+    function closeProjectModal(id) {
+      document.getElementById(`project-modal-${id}`).classList.add("hidden");
+      document.body.style.overflow = ""; // restore scroll
+    }
+
+    // Close modal if clicked outside content
+    window.addEventListener("click", function(event) {
+      for(let i=1; i<=6; i++) {
+        const modal = document.getElementById(`project-modal-${i}`);
+        if (!modal.classList.contains("hidden") && event.target === modal) {
+          closeProjectModal(i);
+        }
       }
     });
   </script>
