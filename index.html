@@ -58,6 +58,31 @@
         transform: scale(1);
       }
     }
+
+    /* Hide scrollbar but allow scrolling */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+
+  .gallery-container {
+    scroll-behavior: smooth;
+    perspective: 1000px;
+  }
+  .gallery-image {
+    width: 80%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: grab;
+    user-select: none;
+    filter: brightness(0.9);
+  }
+  .gallery-image.focused {
+    filter: brightness(1);
+    cursor: default;
+  }
   </style>
 </head>
 <body class="bg-[#0d1117] text-gray-200 font-sans">
@@ -259,12 +284,15 @@
       <p class="mb-4 text-gray-300">
         A full-featured project management system with gamified contribution tracking and IEEE paper publication.
       </p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <img src="assets/P1_img1.png" alt="Screenshot 1" class="rounded-md">
-        <img src="assets/P1_img2.png" alt="Screenshot 2" class="rounded-md">
-        <img src="assets/P1_img3.png" alt="Screenshot 1" class="rounded-md">
-        <img src="assets/P1_img4.png" alt="Screenshot 2" class="rounded-md">
+
+      <!-- Scrollable vertical gallery container -->
+      <div id="gallery-1" class="gallery-container mb-4 max-h-[400px] overflow-y-scroll no-scrollbar">
+        <img src="assets/P1_img1.png" alt="Screenshot 1" class="gallery-image rounded-md mx-auto mb-6" />
+        <img src="assets/P1_img2.png" alt="Screenshot 2" class="gallery-image rounded-md mx-auto mb-6" />
+        <img src="assets/P1_img3.png" alt="Screenshot 3" class="gallery-image rounded-md mx-auto mb-6" />
+        <img src="assets/P1_img4.png" alt="Screenshot 4" class="gallery-image rounded-md mx-auto mb-6" />
       </div>
+
       <ul class="list-disc list-inside space-y-2 text-gray-300">
         <li>Developed a gamified system for project contributors, featuring points, levels, and badges to encourage participation.</li>
         <li>Implemented dynamic leaderboards and real-time contribution tracking.</li>
@@ -399,6 +427,59 @@
         }
       }
     });
+
+  const gallery1 = document.getElementById("gallery-1");
+  const images1 = gallery1.querySelectorAll(".gallery-image");
+
+  function updateGalleryScale() {
+    const containerRect = gallery1.getBoundingClientRect();
+    const containerCenterY = containerRect.top + containerRect.height / 2;
+
+    images1.forEach(img => {
+      const imgRect = img.getBoundingClientRect();
+      const imgCenterY = imgRect.top + imgRect.height / 2;
+
+      const distance = Math.abs(containerCenterY - imgCenterY);
+      const maxDistance = containerRect.height / 2;
+
+      // Calculate scale between 0.7 and 1 based on distance from center
+      let scale = 1 - (distance / maxDistance) * 0.3;
+      scale = Math.max(scale, 0.7);
+
+      // Optional: adjust brightness or opacity too
+      const brightness = 0.6 + (scale - 0.7) * 2;
+
+      img.style.transform = `scale(${scale})`;
+      img.style.filter = `brightness(${brightness})`;
+
+      if (scale > 0.95) {
+        img.classList.add("focused");
+      } else {
+        img.classList.remove("focused");
+      }
+    });
+  }
+
+  gallery1.addEventListener("scroll", () => {
+    updateGalleryScale();
+  });
+
+  // Initial call on modal open: call updateGalleryScale with a slight delay so layout is settled
+  function openProjectModal(id) {
+    document.getElementById(`project-modal-${id}`).classList.remove("hidden");
+    document.body.style.overflow = "hidden"; // prevent background scroll
+
+    setTimeout(() => {
+      updateGalleryScale();
+      // Scroll to top initially
+      gallery1.scrollTop = 0;
+    }, 100);
+  }
+
+  function closeProjectModal(id) {
+    document.getElementById(`project-modal-${id}`).classList.add("hidden");
+    document.body.style.overflow = ""; // restore scroll
+  }
   </script>
 
 </body>
