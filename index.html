@@ -137,7 +137,7 @@ section {
           onclick="openProjectModal(1)">
           
           <!-- Image on top, full width, no cropping -->
-          <img src="assets/P1_img4.png" alt="Project 1" class="w-full object-contain rounded-t-lg" />
+          <img src="assets/P1_imgM.png" alt="Project 1" class="w-full object-contain rounded-t-lg" />
           
           <div class="p-4">
             <h3 class="text-xl font-bold mb-2">Project Management System (MERN)</h3>
@@ -153,7 +153,7 @@ section {
           class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
           onclick="openProjectModal(2)">
 
-          <img src="assets/P2_img1.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
+          <img src="assets/P2_imgM.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
 
           <div class="p-4">
             <h3 class="text-xl font-bold mb-2">EasyReach App (Kotlin)</h3>
@@ -169,10 +169,13 @@ section {
         <div 
           class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
           onclick="openProjectModal(3)">
+
+          <img src="assets/P3_img1.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
+
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Gems & Jewelry Web App (MERN)</h3>
-            <img src="assets/project3-thumb.jpg" alt="Project 3" class="rounded-md mb-4 object-cover h-48 w-full">
-            <a href="https://github.com/yourusername/project3" target="_blank"
+            <h3 class="text-xl font-bold mb-2">Ceylon Ntural Gems</h3>
+            
+            <a href="https://github.com/it21250156/CeylonNaturalGems.git" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
             </a>
@@ -183,10 +186,11 @@ section {
         <div 
           class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
           onclick="openProjectModal(4)">
+          <img src="assets/P4_img1.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">ML Research App</h3>
-            <img src="assets/project4-thumb.jpg" alt="Project 4" class="rounded-md mb-4 object-cover h-48 w-full">
-            <a href="https://github.com/yourusername/project4" target="_blank"
+            <h3 class="text-xl font-bold mb-2">Kind.ly</h3>
+            
+            <a href="https://github.com/it21250156/kindlyapp.git" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
             </a>
@@ -197,10 +201,11 @@ section {
         <div 
           class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
           onclick="openProjectModal(5)">
+          <img src="assets/P5_img1.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Accessibility Tools Suite</h3>
-            <img src="assets/project5-thumb.jpg" alt="Project 5" class="rounded-md mb-4 object-cover h-48 w-full">
-            <a href="https://github.com/yourusername/project5" target="_blank"
+            <h3 class="text-xl font-bold mb-2">Smart spend</h3>
+            
+            <a href="https://github.com/BWeera/MADD_project_SmartSpend.git" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
             </a>
@@ -211,9 +216,10 @@ section {
         <div 
           class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
           onclick="openProjectModal(6)">
+          <img src="assets/P6_imgM.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Data Visualization Dashboard</h3>
-            <img src="assets/project6-thumb.jpg" alt="Project 6" class="rounded-md mb-4 object-cover h-48 w-full">
+            <h3 class="text-xl font-bold mb-2">SpLD_Scanner</h3>
+            
             <a href="https://github.com/yourusername/project6" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
@@ -345,68 +351,99 @@ section {
   </div>
 
   <!-- Modal 3 -->
-  <div id="project-modal-3" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
-    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
-      <button onclick="closeProjectModal(3)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
-      <h3 class="text-3xl font-bold mb-4">Gems & Jewelry Web App (MERN)</h3>
-      <p class="mb-4 text-gray-300">
-        Request tracking system with admin reports and user management.
-      </p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <img src="assets/project3-1.jpg" alt="Screenshot 1" class="rounded-md">
-        <img src="assets/project3-2.jpg" alt="Screenshot 2" class="rounded-md">
-      </div>
-      <a href="https://github.com/yourusername/project3" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+<div id="project-modal-3" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+  <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+    <button onclick="closeProjectModal(3)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+    <h3 class="text-3xl font-bold mb-4">Gems & Jewelry Web App (MERN)</h3>
+    <p class="mb-4 text-gray-300">
+      Request tracking system with admin reports and user management.
+    </p>
+    <div id="gallery-3" class="gallery-container mb-4 max-h-[400px] overflow-y-scroll no-scrollbar">
+      <img src="assets/P1_img1.png" alt="Screenshot 1" class="gallery-image rounded-md mx-auto mb-6" />
+      <img src="assets/P2_img1.png" alt="Screenshot 2" class="gallery-image rounded-md mx-auto mb-6" />
     </div>
+    <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>Implemented Gem request management system using MongoDB, Express.js, React.js and Node.js</li>
+        <li>Developed a Gem request submission form with validation and error handling.</li>
+        <li>Enabled request listing and filtering based on time stamps and user search.</li>
+        <li>Developed a report generation for admins side for gem requests.</li>
+      </ul>
+      <br>
+    <a href="https://github.com/it21250156/CeylonNaturalGems.git" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
   </div>
+</div>
 
-  <!-- Modal 4 -->
-  <div id="project-modal-4" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
-    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
-      <button onclick="closeProjectModal(4)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
-      <h3 class="text-3xl font-bold mb-4">ML Research App</h3>
-      <p class="mb-4 text-gray-300">
-        Machine learning research project focusing on image classification and model optimization.
-      </p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <img src="assets/project4-1.jpg" alt="Screenshot 1" class="rounded-md">
-        <img src="assets/project4-2.jpg" alt="Screenshot 2" class="rounded-md">
-      </div>
-      <a href="https://github.com/yourusername/project4" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+<!-- Modal 4 -->
+<div id="project-modal-4" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+  <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+    <button onclick="closeProjectModal(4)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+    <h3 class="text-3xl font-bold mb-4">Kind.ly</h3>
+    <p class="mb-4 text-gray-300">
+      This Android application focuses on community and charity. It enhances user engagement through interactive features, provides updates on charitable initiatives, displays donation leaderboards, and allows users to monitor their donation history. It also includes a streamlined and user-friendly payment system.
+    </p>
+    <div id="gallery-4" class="gallery-container mb-4 max-h-[400px] overflow-y-scroll no-scrollbar">
+      <img src="assets/project4-1.jpg" alt="Screenshot 1" class="gallery-image rounded-md mx-auto mb-6" />
+      <img src="assets/project4-2.jpg" alt="Screenshot 2" class="gallery-image rounded-md mx-auto mb-6" />
     </div>
+    <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>Community Chat Development: Enhance user engagement by facilitating interactions and community building.</li>
+        <li>Charity Updates: Share compelling narratives and updates on charitable initiatives.</li>
+        <li>Leaderboards for Donations: Display prominent donation rankings for each charity to incentivize contributions. </li>
+        <li>Donation Tracking: Enable users to monitor their donation history conveniently within the application.</li>
+      </ul>
+      <br>
+    <a href="https://github.com/it21250156/kindlyapp.git" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
   </div>
+</div>
 
-  <!-- Modal 5 -->
-  <div id="project-modal-5" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
-    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
-      <button onclick="closeProjectModal(5)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
-      <h3 class="text-3xl font-bold mb-4">Accessibility Tools Suite</h3>
-      <p class="mb-4 text-gray-300">
-        Suite of accessibility tools enhancing usability for differently-abled users.
-      </p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <img src="assets/project5-1.jpg" alt="Screenshot 1" class="rounded-md">
-        <img src="assets/project5-2.jpg" alt="Screenshot 2" class="rounded-md">
-      </div>
-      <a href="https://github.com/yourusername/project5" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+<!-- Modal 5 -->
+<div id="project-modal-5" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+  <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+    <button onclick="closeProjectModal(5)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+    <h3 class="text-3xl font-bold mb-4">Smart Spend</h3>
+    <p class="mb-4 text-gray-300">
+      This Kotlin-based Android application helps users manage their finances. Key features include user and category functions for tracking expenses, automated monthly expense calculations, and a user-friendly interface that displays expenses prominently on the home screen.
+    </p>
+    <div id="gallery-5" class="gallery-container mb-4 max-h-[400px] overflow-y-scroll no-scrollbar">
+      <img src="assets/project5-1.jpg" alt="Screenshot 1" class="gallery-image rounded-md mx-auto mb-6" />
+      <img src="assets/project5-2.jpg" alt="Screenshot 2" class="gallery-image rounded-md mx-auto mb-6" />
     </div>
+    <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>Developed user expenses and category functions using Android studio.</li>
+        <li>Proficiently integrated features for adding, updating, and deleting expenses, alongside automated monthly expense total calculations. Displayed the computed expenses prominently on the home screen for enhanced user accessibility. </li>
+        <li>The visually impaired users can get directions for locating items by dictating the product name to the application's voice recognition system. </li>
+        <li>Research paper detailing application has been accepted by European Chemical Bulletin.</li>
+      </ul>
+      <br>
+    <a href="https://github.com/BWeera/MADD_project_SmartSpend.git" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
   </div>
+</div>
 
-  <!-- Modal 6 -->
-  <div id="project-modal-6" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
-    <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
-      <button onclick="closeProjectModal(6)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
-      <h3 class="text-3xl font-bold mb-4">Data Visualization Dashboard</h3>
-      <p class="mb-4 text-gray-300">
-        Interactive dashboard displaying key metrics and analytics with modern charts.
-      </p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <img src="assets/project6-1.jpg" alt="Screenshot 1" class="rounded-md">
-        <img src="assets/project6-2.jpg" alt="Screenshot 2" class="rounded-md">
-      </div>
-      <a href="https://github.com/yourusername/project6" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
+<!-- Modal 6 -->
+<div id="project-modal-6" class="fixed inset-0 hidden modal-bg z-50 items-center justify-center p-4">
+  <div class="modal-content bg-[#161b22] rounded-lg p-6 max-w-3xl w-full relative">
+    <button onclick="closeProjectModal(6)" class="absolute top-3 right-3 text-white text-3xl font-bold hover:text-gray-400" aria-label="Close modal">&times;</button>
+    <h3 class="text-3xl font-bold mb-4">SpLD_Scanner</h3>
+    <p class="mb-4 text-gray-300">
+      This project created an integrated application that uses a document scanner to help detect dyslexia. It works by automatically detecting and cropping documents, which are then used as input for a machine learning model.
+    </p>
+    <div id="gallery-6" class="gallery-container mb-4 max-h-[400px] overflow-y-scroll no-scrollbar">
+      <img src="assets/P6_img1.png" alt="Screenshot 1" class="gallery-image rounded-md mx-auto mb-6" />
+      <img src="assets/P6_img2.png" alt="Screenshot 2" class="gallery-image rounded-md mx-auto mb-6" />
+      <img src="assets/P6_img3.png" alt="Screenshot 1" class="gallery-image rounded-md mx-auto mb-6" />
+      <img src="assets/P6_img4.png" alt="Screenshot 2" class="gallery-image rounded-md mx-auto mb-6" />
+      <img src="assets/P6_img5.png" alt="Screenshot 1" class="gallery-image rounded-md mx-auto mb-6" />
     </div>
+    <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>Application was developed to automatically detect and crop documents and rename them for model training </li>
+        <li>Developed a machine learning model to detect dyslexia by using images </li>
+        <li>Integrated and converted the model to TFlite, then integrated it with the document scanner application.</li>
+        <li>aThe application detects documents, crops them, and provides results indicating whether the user is dyslexic or not.</li>
+      </ul>
+      <br>
+    <a href="https://github.com/yourusername/project6" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View GitHub Repo</a>
   </div>
+</div>
 
   <!-- Script for navbar scroll effect and modal control -->
   <script>
@@ -610,6 +647,12 @@ section {
 
   // Initialize fullscreen listeners on DOM ready
   document.addEventListener("DOMContentLoaded", addFullscreenListeners);
+
+  setupWheelGallery('gallery-3');
+  setupWheelGallery('gallery-4');
+  setupWheelGallery('gallery-5');
+  setupWheelGallery('gallery-6');
+
 </script>
 
 
