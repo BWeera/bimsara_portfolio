@@ -490,12 +490,40 @@ section {
     const container = document.getElementById(galleryId);
     if (!container) return;
 
-    // First call to update scales
+    // Function to update scale of images based on scroll position
+    function updateGalleryScale(container) {
+      const containerRect = container.getBoundingClientRect();
+      const containerCenterY = containerRect.top + containerRect.height / 2;
+
+      Array.from(container.children).forEach(img => {
+        const imgRect = img.getBoundingClientRect();
+        const imgCenterY = imgRect.top + imgRect.height / 2;
+
+        // Distance from container center (in px)
+        const distance = Math.abs(containerCenterY - imgCenterY);
+
+        // Normalize distance and clamp
+        const maxDistance = containerRect.height / 2;
+        let scale = 1 - (distance / maxDistance) * 0.5; // Scale from 1 to 0.5
+
+        if (scale < 0.5) scale = 0.5;
+        if (scale > 1) scale = 1;
+
+        img.style.transform = `scale(${scale})`;
+      });
+    }
+
+    // Initial call
     updateGalleryScale(container);
 
     // Throttle scroll event with requestAnimationFrame for performance
     let ticking = false;
+
+    // For snapping after scroll stops
+    let scrollTimeout;
+
     container.addEventListener('scroll', () => {
+      // Throttled scale update
       if (!ticking) {
         window.requestAnimationFrame(() => {
           updateGalleryScale(container);
@@ -503,11 +531,45 @@ section {
         });
         ticking = true;
       }
+
+      // Clear previous timeout if still waiting
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+
+      // Set new timeout for snapping 150ms after scroll stops
+      scrollTimeout = setTimeout(() => {
+        // Find image closest to container center
+        const containerRect = container.getBoundingClientRect();
+        const containerCenterY = containerRect.top + containerRect.height / 2;
+
+        let closestImg = null;
+        let minDistance = Infinity;
+
+        Array.from(container.children).forEach(img => {
+          const imgRect = img.getBoundingClientRect();
+          const imgCenterY = imgRect.top + imgRect.height / 2;
+          const distance = Math.abs(containerCenterY - imgCenterY);
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestImg = img;
+          }
+        });
+
+        if (closestImg) {
+          // Scroll so the closest image is centered vertically
+          const scrollTarget = closestImg.offsetTop - (container.clientHeight / 2) + (closestImg.clientHeight / 2);
+
+          container.scrollTo({
+            top: scrollTarget,
+            behavior: 'smooth'
+          });
+        }
+      }, 150);
     });
 
     // Also update on window resize
     window.addEventListener('resize', () => updateGalleryScale(container));
   }
+
 
   // Fullscreen open function
   function openFullscreen(element) {
