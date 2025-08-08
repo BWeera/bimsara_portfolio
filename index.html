@@ -8,75 +8,95 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html {
-  scroll-behavior: smooth;
-}
-section {
-  transition: background-color 1s ease;
-}
+      scroll-behavior: smooth;
+    }
+    section {
+      transition: background-color 1s ease;
+    }
 
-/* Modal background with frosted glass */
-.modal-bg {
-  background-color: rgba(13, 17, 23, 0.6); /* semi-transparent dark */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    /* Modal background with frosted glass */
+    .modal-bg {
+      background-color: rgba(13, 17, 23, 0.6); /* semi-transparent dark */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* Modal content styling */
-.modal-content {
-  background: rgba(255, 255, 255, 0.12); /* translucent white */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border-radius: 12px;
-  padding: 1.5rem;
-  max-width: 80vw;      /* wider */
-  max-height: 90vh;     /* taller */
-  overflow-y: auto;     /* scroll if needed */
-  color: #e0e0e0;
-  animation: fadeInScale 0.3s ease forwards;
-}
+    /* Modal content styling */
+    .modal-content {
+      background: rgba(255, 255, 255, 0.12); /* translucent white */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 80vw;      /* wider */
+      max-height: 90vh;     /* taller */
+      overflow-y: auto;     /* scroll if needed */
+      color: #e0e0e0;
+      animation: fadeInScale 0.3s ease forwards;
+    }
 
-/* Modal fade-in scale animation */
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+    /* Modal fade-in scale animation */
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-/* Hide scrollbars nicely */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+    /* Hide scrollbars nicely */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
 
-/* Gallery container styles */
-.gallery-container {
-  scroll-behavior: smooth;
-  perspective: 1000px;
-  max-height: 400px;
-  overflow-y: scroll;
-}
+    /* Gallery container styles */
+    .gallery-container {
+      scroll-behavior: smooth;
+      perspective: 1000px;
+      max-height: 400px;
+      overflow-y: scroll;
+    }
 
-/* Larger images inside the gallery */
-.gallery-image {
-  max-width: 90%;
-  height: auto;
-  max-height: 400px;
-  display: block;
-  margin: 0 auto 1.5rem auto;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
+    /* Larger images inside the gallery */
+    .gallery-image {
+      max-width: 90%;
+      height: auto;
+      max-height: 400px;
+      display: block;
+      margin: 0 auto 1.5rem auto;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes slowFloat {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .animate-gradientMove {
+      background-size: 200% 200%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    .animate-slowFloat {
+      animation: slowFloat 10s ease-in-out infinite;
+    }
 
   </style>
 </head>
@@ -101,11 +121,20 @@ section {
   <main class="space-y-0">
 
     <!-- About Section -->
-    <section id="about" class="h-screen flex flex-col md:flex-row justify-center items-center gap-10 px-6 bg-[#0d1117]">
-      <img src="assets/profile.jpg" alt="Bimsara Weerakoon"
-        class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover shadow-lg border-4 border-[#21262d]" />
+    <section id="about" class="relative h-screen flex flex-col md:flex-row justify-center items-center gap-10 px-6 bg-[#0d1117] overflow-hidden">
+      
+      <!-- Animated Gradient Background -->
+      <div class="absolute inset-0 z-0 bg-gradient-to-r from-blue-900 via-purple-900 to-black opacity-30 animate-gradientMove"></div>
 
-      <div class="text-center md:text-left max-w-xl">
+      <!-- Optional Floating Dots Pattern -->
+      <div class="absolute w-full h-full bg-[radial-gradient(circle_at_1px_1px,#ffffff22_1px,transparent_0)] bg-[size:40px_40px] animate-slowFloat opacity-20"></div>
+
+      <!-- Profile Image -->
+      <img src="assets/profile.jpg" alt="Bimsara Weerakoon"
+        class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover shadow-lg border-4 border-[#21262d] z-10" />
+
+      <!-- Text Content -->
+      <div class="text-center md:text-left max-w-xl z-10">
         <h1 class="text-5xl md:text-7xl font-bold text-white">Bimsara Weerakoon</h1>
         <p class="text-2xl md:text-3xl mt-4 text-gray-300">
           Software Engineer | Full-Stack & Mobile Developer | ML Enthusiast
@@ -115,10 +144,30 @@ section {
           mobile applications, and machine learning. I’ve contributed to research-backed Android apps and co-authored published papers.
         </p>
 
+        <!-- Contact Links -->
+        <div class="mt-6 flex justify-center md:justify-start gap-5">
+          <a href="mailto:bimsaraweerakoon@gmail.com" class="group relative">
+            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-[#21262d] hover:bg-blue-600 transition-colors duration-300 shadow-lg">📧</div>
+            <span class="absolute bottom-[-2rem] left-1/2 -translate-x-1/2 text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Email</span>
+          </a>
+          <a href="https://www.linkedin.com/in/bimsaraw" target="_blank" class="group relative">
+            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-[#21262d] hover:bg-blue-600 transition-colors duration-300 shadow-lg">💼</div>
+            <span class="absolute bottom-[-2rem] left-1/2 -translate-x-1/2 text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">LinkedIn</span>
+          </a>
+          <a href="https://github.com/BWeera" target="_blank" class="group relative">
+            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-[#21262d] hover:bg-blue-600 transition-colors duration-300 shadow-lg">💻</div>
+            <span class="absolute bottom-[-2rem] left-1/2 -translate-x-1/2 text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">GitHub</span>
+          </a>
+          <a href="https://www.youtube.com/@Btech94" target="_blank" class="group relative">
+            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-[#21262d] hover:bg-blue-600 transition-colors duration-300 shadow-lg">🎥</div>
+            <span class="absolute bottom-[-2rem] left-1/2 -translate-x-1/2 text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">YouTube</span>
+          </a>
+        </div>
+
         <!-- Download CV Button -->
         <div class="mt-8">
           <a href="assets/Bimsara_Weerakoon_CV.pdf" download
-             class="px-8 py-4 bg-blue-600 text-white text-lg rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 inline-block">
+            class="px-8 py-4 bg-blue-600 text-white text-lg rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 inline-block">
             📄 Download CV
           </a>
         </div>
