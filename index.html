@@ -126,21 +126,25 @@ section {
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="min-h-screen flex flex-col justify-center bg-[#161b22] p-6 rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold mb-6">Projects</h2>
+    <section id="projects" class="min-h-screen relative flex flex-col justify-center bg-[#161b22] p-12 rounded-lg shadow-md overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none -z-10">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80" 
+        alt="Tech Background" 
+        class="w-full h-full object-cover opacity-20">
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Project Cards -->
-       <!-- Project 1 -->
+        <div class="absolute inset-0 bg-[#161b22]/20"></div>
+      </div>
+
+      <h2 class="text-4xl font-semibold mb-10 text-center text-white">Projects</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+        <!-- Project Card Template -->
         <div 
-          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_20px_#0ea5e9] max-w-sm mx-auto"
           onclick="openProjectModal(1)">
-          
-          <!-- Image on top, full width, no cropping -->
           <img src="assets/P1_imgM.png" alt="Project 1" class="w-full object-contain rounded-t-lg" />
-          
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Project Management System (MERN)</h3>
+            <h3 class="text-xl font-bold mb-2 text-white">Project Management System (MERN)</h3>
             <a href="https://github.com/it21250156/ProjectManagementTool.git" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
@@ -148,16 +152,13 @@ section {
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Repeat for other projects -->
         <div 
-          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_20px_#0ea5e9] max-w-sm mx-auto"
           onclick="openProjectModal(2)">
-
-          <img src="assets/P2_imgM.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
-
+          <img src="assets/P2_imgM.png" alt="Project 2" class="w-full object-contain rounded-t-lg" />
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">EasyReach App (Kotlin)</h3>
-            
+            <h3 class="text-xl font-bold mb-2 text-white">EasyReach App (Kotlin)</h3>
             <a href="https://github.com/it21250156/EasyReach.git" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
@@ -165,16 +166,12 @@ section {
           </div>
         </div>
 
-        <!-- Project 3 -->
         <div 
-          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_20px_#0ea5e9] max-w-sm mx-auto"
           onclick="openProjectModal(3)">
-
-          <img src="assets/P3_img1.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
-
+          <img src="assets/P3_img1.png" alt="Project 3" class="w-full object-contain rounded-t-lg" />
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Ceylon Ntural Gems</h3>
-            
+            <h3 class="text-xl font-bold mb-2 text-white">Ceylon Natural Gems</h3>
             <a href="https://github.com/it21250156/CeylonNaturalGems.git" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
@@ -182,14 +179,12 @@ section {
           </div>
         </div>
 
-        <!-- Project 4 -->
         <div 
-          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_20px_#0ea5e9] max-w-sm mx-auto"
           onclick="openProjectModal(4)">
-          <img src="assets/P4_img1.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
+          <img src="assets/P4_img1.png" alt="Project 4" class="w-full object-contain rounded-t-lg" />
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Kind.ly</h3>
-            
+            <h3 class="text-xl font-bold mb-2 text-white">Kind.ly</h3>
             <a href="https://github.com/it21250156/kindlyapp.git" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
@@ -197,14 +192,12 @@ section {
           </div>
         </div>
 
-        <!-- Project 5 -->
         <div 
-          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_20px_#0ea5e9] max-w-sm mx-auto"
           onclick="openProjectModal(5)">
-          <img src="assets/P5_img1.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
+          <img src="assets/P5_img1.png" alt="Project 5" class="w-full object-contain rounded-t-lg" />
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Smart spend</h3>
-            
+            <h3 class="text-xl font-bold mb-2 text-white">Smart Spend</h3>
             <a href="https://github.com/BWeera/MADD_project_SmartSpend.git" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
@@ -212,14 +205,12 @@ section {
           </div>
         </div>
 
-        <!-- Project 6 -->
         <div 
-          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:shadow-xl"
+          class="bg-[#1c2128] rounded-lg overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_20px_#0ea5e9] max-w-sm mx-auto"
           onclick="openProjectModal(6)">
-          <img src="assets/P6_imgM.png" alt="Project 2" class="w-full object-contain rounded-t-lg">
+          <img src="assets/P6_imgM.png" alt="Project 6" class="w-full object-contain rounded-t-lg" />
           <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">SpLD_Scanner</h3>
-            
+            <h3 class="text-xl font-bold mb-2 text-white">SpLD_Scanner</h3>
             <a href="https://github.com/yourusername/project6" target="_blank"
               class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition">
               View on GitHub
@@ -230,55 +221,54 @@ section {
     </section>
 
    <!-- Experience -->
-<section id="experience" class="min-h-screen flex items-center justify-center bg-[#0f131a] px-6 py-12 relative">
-  
-  <!-- Background Image with Overlay -->
-  <div class="absolute inset-0">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920&auto=format&fit=crop" 
-         alt="Tech Background" 
-         class="w-full h-full object-cover opacity-30">
-    <div class="absolute inset-0 bg-[#0f131a]/80"></div>
-  </div>
-
-  <!-- Content -->
-  <div class="relative max-w-5xl w-full">
-    <h2 class="text-4xl font-semibold text-center mb-10">Experience</h2>
-
-    <div class="bg-[#161b22]/90 rounded-lg shadow-lg p-8 transition-transform duration-300 hover:scale-[1.02]">
-      <!-- Job Title -->
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-        <h3 class="text-2xl font-bold flex items-center gap-3">
-          <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Work Icon" class="w-8 h-8">
-          Mobile Application Developer Intern
-        </h3>
-        <span class="text-gray-400 text-sm mt-2 sm:mt-0">
-          Ulster University UK &bull; Jul 2024 – Jan 2025
-        </span>
+    <section id="experience" class="min-h-screen flex items-center justify-center bg-[#0f131a] px-6 py-12 relative">
+      
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920&auto=format&fit=crop" 
+            alt="Tech Background" 
+            class="w-full h-full object-cover opacity-30">
+        <div class="absolute inset-0 bg-[#0f131a]/80"></div>
       </div>
 
-      <!-- Responsibilities -->
-      <ul class="space-y-4 text-lg text-gray-300 list-none">
-        <li class="flex items-start gap-3">
-          <span class="text-blue-500">✔</span>
-          Developed an Android document scanning application with camera access, image saving, and a structured naming convention.
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-500">✔</span>
-          Transitioned from OpenCV to Google ML Kit for more reliable document detection, improving accuracy and stability.
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-500">✔</span>
-          Conducted cross-version testing on multiple Android devices, ensuring smooth performance and compatibility.
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-500">✔</span>
-          Trained and integrated a custom machine learning model for dyslexia detection using TensorFlow Lite and ML Kit.
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+      <!-- Content -->
+      <div class="relative max-w-5xl w-full">
+        <h2 class="text-4xl font-semibold text-center mb-10">Experience</h2>
 
+        <div class="bg-[#161b22]/90 rounded-lg shadow-lg p-8 transition-transform duration-300 hover:scale-[1.02]">
+          <!-- Job Title -->
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+            <h3 class="text-2xl font-bold flex items-center gap-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Work Icon" class="w-8 h-8">
+              Mobile Application Developer Intern
+            </h3>
+            <span class="text-gray-400 text-sm mt-2 sm:mt-0">
+              Ulster University UK &bull; Jul 2024 – Jan 2025
+            </span>
+          </div>
+
+          <!-- Responsibilities -->
+          <ul class="space-y-4 text-lg text-gray-300 list-none">
+            <li class="flex items-start gap-3">
+              <span class="text-blue-500">✔</span>
+              Developed an Android document scanning application with camera access, image saving, and a structured naming convention.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-blue-500">✔</span>
+              Transitioned from OpenCV to Google ML Kit for more reliable document detection, improving accuracy and stability.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-blue-500">✔</span>
+              Conducted cross-version testing on multiple Android devices, ensuring smooth performance and compatibility.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-blue-500">✔</span>
+              Trained and integrated a custom machine learning model for dyslexia detection using TensorFlow Lite and ML Kit.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   
     <!-- Skills -->
     <section id="skills" class="min-h-screen flex items-center justify-center bg-[#19222c] py-10">
@@ -398,12 +388,40 @@ section {
     </section>
 
     <!-- Education -->
-    <section id="education" class="h-screen flex items-center justify-center bg-[#141b24]">
-      <div class="max-w-4xl p-6">
-        <h2 class="text-4xl font-semibold mb-4">Education</h2>
-        <p class="text-lg">BSc (Hons) in Information Technology – Software Engineering, SLIIT (2021 - 2025)</p>
+<section id="education" class="min-h-screen relative flex items-center justify-center bg-[#141b24] p-12 rounded-lg shadow-md overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 pointer-events-none -z-10">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920&auto=format&fit=crop" 
+         alt="Education Tech Background" 
+         class="w-full h-full object-cover opacity-20">
+    <div class="absolute inset-0 bg-[#141b24]/90"></div>
+  </div>
+
+  <div
+    class="max-w-4xl bg-[#1c2128] rounded-lg p-8 shadow-lg text-white mx-auto transition-transform duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2"
+  >
+    <h2 class="text-4xl font-semibold mb-8 text-center">Education</h2>
+
+    <div class="space-y-8 text-lg leading-relaxed">
+      <div>
+        <h3 class="text-2xl font-bold mb-2">Sri Lanka Institute of Information Technology (SLIIT)</h3>
+        <p>BSc (Hons) in Information Technology - Software Engineering</p>
+        <p class="mt-1 text-gray-300">Examinations completed - June 2025 | Official graduation pending</p>
       </div>
-    </section>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-2">Advanced Level - 2020</h3>
+        <p>Govt. Science College - Matale | Bio Science Stream</p>
+        <p class="mt-1 text-gray-300">Successfully passed all the subjects</p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-2">Ordinary Level - 2016</h3>
+        <p>Passed all 9 subjects with Distinction passes for all subjects (Sinhala Medium)</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
     <!-- Contact -->
