@@ -212,19 +212,41 @@
 <body class="bg-[#0d1117] text-gray-200 font-sans">
 
   <!-- Navbar -->
-  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center text-white">
-      <div class="text-lg font-semibold"></div>
-      <ul class="flex space-x-6 text-sm md:text-base">
-        <li><a href="#about" class="hover:text-blue-400">About</a></li>
-        <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-        <li><a href="#experience" class="hover:text-blue-400">Experience</a></li>
-        <li><a href="#skills" class="hover:text-blue-400">Skills</a></li>
-        <li><a href="#education" class="hover:text-blue-400">Education</a></li>
-        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center text-white">
+    
+    <!-- Logo -->
+    <div class="text-lg font-semibold">My Portfolio</div>
+
+    <!-- Hamburger Button (Mobile) -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none">
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+    </button>
+
+    <!-- Menu Links -->
+    <ul id="menu" class="hidden md:flex space-x-6 text-sm md:text-base">
+      <li><a href="#about" class="hover:text-blue-400">About</a></li>
+      <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+      <li><a href="#experience" class="hover:text-blue-400">Experience</a></li>
+      <li><a href="#skills" class="hover:text-blue-400">Skills</a></li>
+      <li><a href="#education" class="hover:text-blue-400">Education</a></li>
+      <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 px-6 pb-4 bg-black/0 backdrop-blur-lg text-white">
+    <a href="#about" class="hover:text-blue-400">About</a>
+    <a href="#projects" class="hover:text-blue-400">Projects</a>
+    <a href="#experience" class="hover:text-blue-400">Experience</a>
+    <a href="#skills" class="hover:text-blue-400">Skills</a>
+    <a href="#education" class="hover:text-blue-400">Education</a>
+    <a href="#contact" class="hover:text-blue-400">Contact</a>
+  </div>
+</nav>
+
 
   <!-- Main Content -->
   <main class="space-y-0">
@@ -851,6 +873,7 @@
 
   <!-- Script for navbar scroll effect and modal control -->
   <script>
+    
   // Navbar scroll effect
   window.addEventListener("scroll", function () {
     const navbar = document.getElementById("navbar");
@@ -869,6 +892,13 @@
         "border-white/10"
       );
     }
+  });
+
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
   });
 
   // Open modal by id
