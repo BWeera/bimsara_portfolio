@@ -10,9 +10,88 @@
     html {
       scroll-behavior: smooth;
     }
-    section {
-      transition: background-color 1s ease;
-    }
+    /* Base section styling */
+  section {
+    position: relative;
+    z-index: 1;
+    background-attachment: fixed; /* Creates parallax effect for smoother transitions */
+  }
+
+  /* About Section - Deep blue/purple */
+  #about {
+    background: linear-gradient(to bottom, #0a0e1a 0%, #14182b 100%);
+  }
+  .animate-gradientMove {
+    background: linear-gradient(135deg, #1a1b4b, #3b2a7a, #0a0e1a);
+  }
+
+  /* Projects Section - Teal/blue */
+  #projects {
+    background: linear-gradient(to bottom, #14182b 0%, #0d1a26 100%);
+  }
+  .animate-gradientProjects {
+    background: linear-gradient(135deg, #0d2b45, #1a4b6b, #0d1a26);
+  }
+
+  /* Experience Section - Deep purple/indigo */
+  #experience {
+    background: linear-gradient(to bottom, #0d1a26 0%, #151238 100%);
+  }
+  /* Keep your existing background image with adjusted overlay */
+  #experience .absolute.inset-0.bg-\[\#0f131a\]\/80 {
+    background-color: rgba(10, 12, 28, 0.85) !important;
+  }
+
+  /* Skills Section - Emerald/dark teal */
+  #skills {
+    background: linear-gradient(to bottom, #151238 0%, #0c211e 100%);
+  }
+  .animate-gradientSkills {
+    background: linear-gradient(135deg, #0c3a32, #1a6b5e, #0c211e);
+  }
+
+  /* Education Section - Deep violet */
+  #education {
+    background: linear-gradient(to bottom, #0c211e 0%, #1a0e2b 100%);
+  }
+  .animate-gradientEducation {
+    background: linear-gradient(135deg, #2a1055, #4a1d8c, #1a0e2b);
+  }
+
+  /* Contact Section - Dark indigo */
+  #contact {
+    background: linear-gradient(to bottom, #1a0e2b 0%, #0a0e1a 100%);
+  }
+  .animate-gradientContact {
+    background: linear-gradient(135deg, #1e1b4b, #3a2a7a, #0a0e1a);
+  }
+
+  /* Shared gradient properties */
+  .animate-gradientMove,
+  .animate-gradientProjects,
+  .animate-gradientSkills,
+  .animate-gradientEducation,
+  .animate-gradientContact {
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+    mix-blend-mode: soft-light;
+    opacity: 0.4;
+  }
+
+  /* Floating dots pattern adjustment */
+  .absolute.bg-\[radial-gradient\(circle_at_1px_1px\,#ffffff22_1px\,transparent_0\)\] {
+    opacity: 0.15;
+  }
+
+  /* Make the gradient overlays blend better */
+  .animate-gradientMove,
+  .animate-gradientProjects,
+  .animate-gradientSkills,
+  .animate-gradientEducation,
+  .animate-gradientContact {
+    mix-blend-mode: soft-light;
+    opacity: 0.5; /* Reduced opacity for smoother blending */
+  }
 
     /* Modal background with frosted glass */
     .modal-bg {
@@ -252,7 +331,7 @@
   <main class="space-y-0">
 
     <!-- About Section -->
-    <section id="about" class="relative h-screen flex flex-col md:flex-row justify-center items-center gap-10 px-6 bg-[#0d1117] overflow-hidden">
+    <section id="about" class="min-h-screen relative flex flex-col md:flex-row justify-center items-center gap-10 px-6 overflow-hidden">
       
       <!-- Animated Gradient Background -->
       <div class="absolute inset-0 z-0 bg-gradient-to-r from-blue-900 via-purple-900 to-black opacity-30 animate-gradientMove"></div>
@@ -306,9 +385,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="min-h-screen relative flex flex-col justify-center bg-[#161b22] p-12 rounded-lg shadow-md overflow-hidden">
-
-      <!-- Animated Gradient Background -->
+    <section id="projects" class="min-h-screen relative flex flex-col justify-center p-12 rounded-lg shadow-md overflow-hidden">
       <div class="absolute inset-0 z-0 bg-gradient-to-r from-teal-700 via-pink-700 to-slate-900 opacity-30 animate-gradientProjects pointer-events-none"></div>
 
       <!-- Optional Floating Dots Pattern -->
@@ -405,7 +482,7 @@
 
 
    <!-- Experience -->
-    <section id="experience" class="min-h-screen flex items-center justify-center bg-[#0f131a] px-6 py-12 relative">
+    <section id="experience" class="min-h-screen relative flex flex-col justify-center p-12 rounded-lg shadow-md overflow-hidden flex items-center justify-center">
       
       <!-- Background Image with Overlay -->
       <div class="absolute inset-0">
@@ -455,7 +532,7 @@
     </section>
   
     <!-- Skills -->
-    <section id="skills" class="min-h-screen relative flex items-center justify-center bg-[#19222c] py-10 overflow-hidden">
+    <section id="skills" class="min-h-screen relative flex flex-col justify-center p-12 rounded-lg shadow-md overflow-hidden flex items-center justify-center">
       <!-- Animated Gradient Background -->
       <div class="absolute inset-0 z-0 bg-gradient-to-r from-green-800 via-teal-700 to-cyan-900 opacity-30 animate-gradientSkills pointer-events-none"></div>
 
@@ -578,7 +655,7 @@
     </section>
 
     <!-- Education -->
-    <section id="education" class="min-h-screen relative flex items-center justify-center bg-[#141b24] p-12 rounded-lg shadow-md overflow-hidden">
+    <section id="education" class="min-h-screen relative flex flex-col justify-center p-12 rounded-lg shadow-md overflow-hidden">
 
       <!-- Animated Gradient Background -->
       <div class="absolute inset-0 z-0 bg-gradient-to-r from-purple-900 via-pink-800 to-red-900 opacity-30 animate-gradientEducation pointer-events-none"></div>
@@ -634,22 +711,24 @@
       </div>
     </section>
 
-    <!-- Contact -->
-  <section id="contact" class="min-h-screen relative flex items-center justify-center overflow-hidden p-6">
-    
-    <!-- Animated Gradient Background -->
-    <div class="absolute inset-0 bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 opacity-40 animate-gradientContact pointer-events-none"></div>
-    
-    <!-- Floating Lights -->
-    <div class="absolute inset-0">
-      <div class="absolute top-10 left-20 w-2 h-2 bg-white rounded-full opacity-60 animate-ping-slow"></div>
-      <div class="absolute bottom-20 right-32 w-3 h-3 bg-blue-300 rounded-full opacity-70 animate-ping-slower"></div>
-      <div class="absolute top-1/3 left-1/4 w-2 h-2 bg-pink-300 rounded-full opacity-60 animate-ping-slow"></div>
-    </div>
+    <!-- Update the Contact Section with centered box -->
+<section id="contact" class="min-h-screen relative flex items-center justify-center bg-gradient-to-b from-[#0d1117] to-[#161b22] p-4 sm:p-12 overflow-hidden">
+  
+  <!-- Animated Gradient Background -->
+  <div class="absolute inset-0 bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 opacity-40 animate-gradientContact pointer-events-none"></div>
+  
+  <!-- Floating Lights -->
+  <div class="absolute inset-0">
+    <div class="absolute top-10 left-20 w-2 h-2 bg-white rounded-full opacity-60 animate-ping-slow"></div>
+    <div class="absolute bottom-20 right-32 w-3 h-3 bg-blue-300 rounded-full opacity-70 animate-ping-slower"></div>
+    <div class="absolute top-1/3 left-1/4 w-2 h-2 bg-pink-300 rounded-full opacity-60 animate-ping-slow"></div>
+  </div>
 
-    <div class="relative z-10 max-w-4xl w-full bg-[#1c2736]/20 backdrop-blur-lg rounded-lg p-8 shadow-lg text-white border border-white/10">
+  <!-- Centered Contact Box -->
+  <div class="relative z-10 w-full max-w-2xl mx-auto"> <!-- Changed max-w-4xl to max-w-2xl for better proportion -->
+    <div class="bg-[#1c2736]/20 backdrop-blur-lg rounded-lg p-8 shadow-lg text-white border border-white/10">
       <h2 class="text-4xl font-semibold mb-6 text-center">Contact</h2>
-      <form id="contactForm" class="space-y-6 max-w-lg mx-auto" onsubmit="handleSubmit(event)">
+      <form id="contactForm" class="space-y-6" onsubmit="handleSubmit(event)">
         <div>
           <label for="name" class="block mb-2 font-medium">Name</label>
           <input
@@ -693,7 +772,8 @@
         </div>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
   </main>
 
